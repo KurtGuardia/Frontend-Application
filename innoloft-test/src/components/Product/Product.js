@@ -12,7 +12,7 @@ import { getProduct } from '../../actions/productActions';
 import './Product.scss';
 import { Spinner } from '../index';
 
-const Product = () => {
+const Product = ({ hasUserSection }) => {
   const dispatch = useDispatch();
   const [description, setDescription] = useState(true);
   const [attributes, setAttributes] = useState(false);
@@ -42,7 +42,10 @@ const Product = () => {
       ) : (
         <>
           {' '}
-          <div className='Product'>
+          <div
+            className='Product'
+            style={{ width: !hasUserSection ? '70vw' : '50vw' }}
+          >
             <ProductImage product={prod} />
             <ProductMainInfo product={prod} />
             <div className='tabs'>
@@ -68,10 +71,12 @@ const Product = () => {
             {description && <Description product={prod} />}
             {attributes && <Attributes product={prod} />}
           </div>
-          <div className='user'>
-            <UserInfo product={prod} />
-            <Map product={prod} />
-          </div>
+          {hasUserSection && (
+            <div className='user'>
+              <UserInfo product={prod} />
+              <Map product={prod} />
+            </div>
+          )}
         </>
       )}
     </div>

@@ -11,7 +11,10 @@ const id = process.env.REACT_APP_APP_ID;
 export const fetchConfig = () => async (dispatch, getState) => {
   try {
     const { data } = await axios.get(`${url}${configQuery}${id}`);
-
+    // const { data } = await axios.get(
+    //   `https://api-test.innoloft.com/configuration/2`
+    // );
+    console.log(data);
     dispatch({
       type: FETCH_CONFIG_SUCCESS,
       payload: data,

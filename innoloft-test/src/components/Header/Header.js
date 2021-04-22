@@ -5,9 +5,8 @@ import './Header.scss';
 const Header = ({ logo, mainColor }) => {
   const [headerClass, setHeaderClass] = useState('Header blue');
   const [display, setDisplay] = useState(true);
-  console.log(mainColor);
   const configId = Number(process.env.REACT_APP_APP_ID);
-
+  console.log(mainColor);
   if (configId === 1) {
     window.addEventListener('scroll', function () {
       var value = window.scrollY;

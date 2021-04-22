@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
+import { getConfigReducer } from './config';
 import {
   getProductReducer,
   getTrlReducer,
   updateProductReducer,
 } from './productReducer';
-import { getConfigReducer } from './config';
 
 const rootReducer = combineReducers({
   product: getProductReducer,
