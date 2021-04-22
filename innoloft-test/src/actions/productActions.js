@@ -10,11 +10,10 @@ import {
   FETCH_TRL_SUCCESS,
 } from '../constants/productConstants';
 
-const url = 'https://api-test.innoloft.com/';
-const query = '/product/';
-const id = '6781';
-const productQuery = '/product/';
-const trlQuery = '/trl/';
+const url = process.env.REACT_APP_URL;
+const productQuery = process.env.REACT_APP_PROD_QUERY;
+const trlQuery = process.env.REACT_APP_TRL_QUERY;
+const id = process.env.REACT_APP_ID;
 
 export const getProduct = () => async (dispatch, getState) => {
   try {

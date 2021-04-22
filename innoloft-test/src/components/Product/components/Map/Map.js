@@ -5,8 +5,8 @@ import LocationPin from './LocationPin';
 
 const Map = ({ product }) => {
   const street = product?.company.address?.street;
-  const lat = product?.company.address?.latitude;
-  const lng = -product?.company.address?.longitude;
+  // const lat = product?.company.address?.latitude;
+  // const lng = -product?.company.address?.longitude;
   const house = product?.company.address?.house;
   const country = product?.company.address?.country?.name;
   const city = product?.company.address?.city?.name;
