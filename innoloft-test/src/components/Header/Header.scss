@@ -3,6 +3,7 @@
   width: 100vw;
   padding: 1rem;
   position: relative;
+  z-index: 5;
 
   &.blue {
     background-color: #272e71;
@@ -36,5 +37,9 @@
   & > svg {
     height: 2rem;
     position: absolute;
+  }
+
+  & img {
+    height: 100%;
   }
 }

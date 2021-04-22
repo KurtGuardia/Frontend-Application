@@ -15,9 +15,13 @@ function App() {
     dispatch(fetchConfig());
   }, [dispatch]);
 
+  const mainColor = config?.mainColor;
+  const logo = config?.logo;
+  const hasUserSection = config?.hasUserSection;
+
   return (
     <div className='App'>
-      <Header />{' '}
+      <Header logo={logo} mainColor={mainColor} />
       <div className='content'>
         <Navigation />
         <Switch>
