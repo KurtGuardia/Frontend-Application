@@ -1,2 +1,30 @@
 .Product {
+  background-color: #f6f6f6;
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    background-color: #fff;
+  }
+
+  .ProductImage {
+    height: 30%;
+    padding: 0.5rem;
+  }
+
+  .ProductMainInfo {
+    height: 15%;
+    margin: 0.5rem;
+  }
+
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+  }
+
+  .TabContent {
+    height: 40%;
+  }
 }

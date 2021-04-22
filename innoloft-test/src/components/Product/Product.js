@@ -23,7 +23,18 @@ const Product = () => {
 
   return (
     <div className='main'>
-      {prod === undefined ? (
+      {error ? (
+        <div
+          style={{
+            margin: 'auto',
+            color: 'red',
+            fontSize: '30px',
+            fontWeight: 'bold',
+          }}
+        >
+          {error.message}
+        </div>
+      ) : loading === true ? (
         <Spinner />
       ) : (
         <>
