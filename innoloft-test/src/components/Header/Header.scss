@@ -1,2 +1,10 @@
 .Heaader {
+  background-color: #272e71;
+  height: 2rem;
+  width: 100vw;
+  padding: 1rem;
+  position: relative;
+
+  & > svg {
+  }
 }

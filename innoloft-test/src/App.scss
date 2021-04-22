@@ -1,0 +1,32 @@
+.App {
+  background-color: #f6f6f6;
+  color: #454d4b;
+
+  .header {
+    position: fixed;
+  }
+
+  .main {
+    display: flex;
+    width: 100%;
+    padding-top: 5rem;
+
+    & > * {
+      margin: 0.5rem;
+      background-color: #fff;
+    }
+
+    .nav {
+      width: 25%;
+      height: 100vh;
+    }
+
+    .product {
+      width: 50%;
+    }
+
+    .user {
+      width: 35%;
+    }
+  }
+}
