@@ -42,10 +42,7 @@ const Product = ({ hasUserSection }) => {
       ) : (
         <>
           {' '}
-          <div
-            className='Product'
-            style={{ width: !hasUserSection ? '70vw' : '50vw' }}
-          >
+          <div className='Product'>
             <ProductImage product={prod} />
             <ProductMainInfo product={prod} />
             <div className='tabs'>
