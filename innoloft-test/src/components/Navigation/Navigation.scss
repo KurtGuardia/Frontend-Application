@@ -1,5 +1,17 @@
 .Navigation {
+  margin: 0.5rem;
+  width: 15%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #fff;
+
+  &__link {
+    text-decoration: none;
+    color: #454d4b;
+    &--active {
+      color: #3ab396;
+    }
+  }
 }
