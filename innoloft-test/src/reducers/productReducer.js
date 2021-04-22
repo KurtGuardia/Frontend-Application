@@ -47,16 +47,16 @@ export const getTrlReducer = (state = [], action) => {
 
 export const updateProductReducer = (state = {}, action) => {
   switch (action.type) {
-    case PRODUCT_REQUEST:
+    case PRODUCT_UPDATE_REQUEST:
       return {
         loading: true,
       };
-    case PRODUCT_SUCCESS:
+    case PRODUCT_UPDATE_SUCCESS:
       return {
         loading: false,
         success: true,
       };
-    case PRODUCT_FAIL:
+    case PRODUCT_UPDATE_FAIL:
       return {
         loading: false,
         error: action.payload,

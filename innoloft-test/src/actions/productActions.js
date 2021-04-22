@@ -44,3 +44,22 @@ export const getTrl = () => async (dispatch, getState) => {
     dispatch({ type: FETCH_TRL_FAIL, payload: err });
   }
 };
+
+export const updateProduct = (product) => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: PRODUCT_UPDATE_REQUEST,
+    });
+
+    await axios.put(`${url}${productQuery}${product.id}`, product);
+
+    dispatch({
+      type: PRODUCT_UPDATE_SUCCESS,
+    });
+  } catch (err) {
+    dispatch({
+      type: PRODUCT_UPDATE_FAIL,
+      payload: err,
+    });
+  }
+};

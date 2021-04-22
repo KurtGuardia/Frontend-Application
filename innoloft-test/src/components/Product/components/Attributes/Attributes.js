@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button } from '../../..';
-import { getTrl } from '../../../../actions/productActions';
+import { getTrl, updateProduct } from '../../../../actions/productActions';
 import Modal from '../../../UI/Modal/Modal';
 import './Attributes.scss';
 
@@ -10,7 +10,7 @@ const Attributes = ({ product }) => {
   const [cat, setCat] = useState([]);
   const [businessModels, setBusinessModels] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
-  const [newTrl, setNewTrl] = useState('');
+  const [newTrlId, setNewTrlId] = useState('');
   const [newCat, setNewCat] = useState('');
   const [newBusinessModel, setNewBusinessModel] = useState('');
 
@@ -30,15 +30,43 @@ const Attributes = ({ product }) => {
     dispatch(getTrl());
   };
 
-  const handleSubmit = () => {};
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newTrl;
+    let newCatObj;
+    let newBusinessModelObj;
 
-  useEffect(() => {
-    console.log(trlOpt);
-  }, [trlOpt]);
+    if (newTrlId) {
+      newTrl = trlOpt.find((el) => el.id === newTrlId);
+    } else {
+      newTrl = product?.trl;
+    }
+
+    if (newCat) {
+      newCatObj = { id: Math.random(), name: newCat };
+      cat.push(newCatObj);
+    }
+
+    if (newBusinessModel) {
+      newBusinessModelObj = { id: Math.random(), name: newBusinessModel };
+      businessModels.push(newBusinessModelObj);
+    }
+
+    const newProduct = {
+      ...product,
+      trl: newTrl,
+      categories: cat,
+      businessModels,
+    };
+
+    updateProduct(newProduct);
+    console.log('Product Updated!! Sorry it can be fetched and UI updated');
+    setIsEdit(false);
+  };
 
   return (
     <div className='desc-att attributes'>
-      <div className={isEdit && 'blur'}></div>
+      <div className={isEdit ? 'blur' : ''}></div>
       <Modal show={isEdit}>
         <div className='modal__title'>
           <h2>Your Updates:</h2>
@@ -51,10 +79,12 @@ const Attributes = ({ product }) => {
             <select
               defaultValue={trl.name}
               className={isEdit ? `isEdit` : ''}
-              onChange={(e) => setNewTrl(e.target.value)}
+              onChange={(e) => setNewTrlId(e.target.value)}
             >
               {trlOpt?.map((trl) => (
-                <option key={trl.id}>{trl.name}</option>
+                <option value={trl.id} key={trl.id}>
+                  {trl.name}
+                </option>
               ))}
             </select>
           </div>

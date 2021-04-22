@@ -10,7 +10,7 @@
     top: 0;
     left: 0;
     height: 110vh;
-    width: 90vw;
+    width: 98.5vw;
     z-index: 2;
   }
 
@@ -34,6 +34,9 @@
     justify-content: space-around;
     align-items: center;
 
+    .trl h3 {
+      margin: 0.5rem;
+    }
     .cat {
       width: 100%;
     }
