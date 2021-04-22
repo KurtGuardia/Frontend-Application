@@ -10,18 +10,20 @@ import {
 
 const Product = () => {
   return (
-    <>
+    <div className='main'>
       <div className='Product'>
         <ProductImage />
         <ProductMainInfo />
-        <Description />
-        <Attributes />
+        <div className='tabs'>
+          <Description />
+          <Attributes />
+        </div>
       </div>
       <div className='user'>
         <UserInfo />
         <Map />
       </div>
-    </>
+    </div>
   );
 };
 

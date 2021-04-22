@@ -1,5 +1,4 @@
 .App {
-  background-color: #f6f6f6;
   color: #454d4b;
 
   .header {
@@ -7,6 +6,7 @@
   }
 
   .main {
+    background-color: #f6f6f6;
     display: flex;
     width: 100%;
     padding-top: 5rem;
@@ -22,11 +22,51 @@
     }
 
     .product {
+      background-color: #f6f6f6;
       width: 50%;
+      display: flex;
+      flex-direction: column;
+
+      & > * {
+        background-color: #fff;
+        margin: 0.5rem;
+      }
+
+      .ProductImage {
+        height: 30%;
+      }
+
+      .ProductMainInfo {
+        height: 15%;
+      }
+
+      .tabs {
+        display: flex;
+        justify-content: space-around;
+        padding: 2rem;
+      }
+
+      .TabContent {
+        height: 40%;
+      }
     }
 
     .user {
+      background-color: #f6f6f6;
       width: 35%;
+
+      & > * {
+        background-color: #fff;
+        margin: 1rem 0 0 0.5rem;
+      }
+
+      .UserInfo {
+        height: 50%;
+      }
+
+      .Map {
+        height: 50%;
+      }
     }
   }
 }
