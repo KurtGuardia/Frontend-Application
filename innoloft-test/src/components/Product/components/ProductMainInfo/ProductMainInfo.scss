@@ -1,0 +1,13 @@
+.ProductMainInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  //   & > * {
+  //     margin-left: 2rem;
+  //   }
+
+  span {
+    margin-left: 2rem;
+  }
+}
