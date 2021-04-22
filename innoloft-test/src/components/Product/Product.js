@@ -14,7 +14,7 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const product = useSelector((state) => state.product);
-  // const { loading, product: prod, error } = product;
+  const { loading, product: prod, error } = product;
 
   useEffect(() => {
     dispatch(getProduct());
@@ -22,17 +22,17 @@ const Product = () => {
 
   return (
     <div className='main'>
-      <div className='Product'>
-        <ProductImage payload={product} />
-        <ProductMainInfo payload={product} />
+      <div className='product'>
+        <ProductImage product={prod} />
+        <ProductMainInfo product={prod} />
         <div className='tabs'>
-          <Description payload={product} />
-          <Attributes payload={product} />
+          <Description product={prod} />
+          <Attributes product={prod} />
         </div>
       </div>
       <div className='user'>
-        <UserInfo payload={product} />
-        <Map payload={product} />
+        <UserInfo product={prod} />
+        <Map product={prod} />
       </div>
     </div>
   );
