@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   ProductImage,
   ProductMainInfo,
@@ -7,21 +7,32 @@ import {
   Description,
   Attributes,
 } from './components';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProduct } from '../../actions/productActions';
 
 const Product = () => {
+  const dispatch = useDispatch();
+
+  const product = useSelector((state) => state.product);
+  // const { loading, product: prod, error } = product;
+
+  useEffect(() => {
+    dispatch(getProduct());
+  }, [dispatch]);
+
   return (
     <div className='main'>
       <div className='Product'>
-        <ProductImage />
-        <ProductMainInfo />
+        <ProductImage payload={product} />
+        <ProductMainInfo payload={product} />
         <div className='tabs'>
-          <Description />
-          <Attributes />
+          <Description payload={product} />
+          <Attributes payload={product} />
         </div>
       </div>
       <div className='user'>
-        <UserInfo />
-        <Map />
+        <UserInfo payload={product} />
+        <Map payload={product} />
       </div>
     </div>
   );
