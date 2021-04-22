@@ -10,7 +10,7 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import { getProduct } from '../../actions/productActions';
 import './Product.scss';
-import Spinner from '../UI/Spinner/Spinner';
+import { Spinner } from '../index';
 
 const Product = () => {
   const dispatch = useDispatch();

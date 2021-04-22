@@ -1,7 +1,7 @@
 .Product {
   background-color: #f6f6f6;
   width: 50vw;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
 
@@ -12,7 +12,7 @@
   }
 
   .ProductImage {
-    height: 50%;
+    height: 45%;
   }
 
   .ProductMainInfo {
@@ -28,7 +28,7 @@
 
     & > * {
       text-align: center;
-      background-color: #f0f0f0;
+      background-color: #ddd;
       padding: 0.5rem;
       width: 50%;
       border-radius: 15px 15px 0 0;
@@ -42,6 +42,7 @@
       font-size: 16px;
       border: none;
       outline: none;
+      cursor: pointer;
 
       &.active {
         border: 1px solid #3ab3973a;
@@ -53,11 +54,10 @@
 
   .desc-att {
     text-align: start;
-    display: flex;
     letter-spacing: 1.5px;
     padding: 1.2rem;
     background-color: #fff;
-    height: 40%;
+    height: 70%;
     margin-top: 0;
     border-top: none;
   }
