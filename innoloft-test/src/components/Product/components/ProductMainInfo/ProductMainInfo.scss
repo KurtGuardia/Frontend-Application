@@ -3,9 +3,10 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  //   & > * {
-  //     margin-left: 2rem;
-  //   }
+
+  & > * {
+    margin: 0;
+  }
 
   span {
     margin-left: 2rem;

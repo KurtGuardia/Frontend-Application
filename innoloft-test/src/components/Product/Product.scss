@@ -1,30 +1,64 @@
 .Product {
   background-color: #f6f6f6;
   width: 50vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 
   & > * {
     background-color: #fff;
+    margin: 0.5rem;
+    border: 1px solid #3ab3973a;
   }
 
   .ProductImage {
-    height: 30%;
-    padding: 0.5rem;
+    height: 50%;
   }
 
   .ProductMainInfo {
     height: 15%;
-    margin: 0.5rem;
   }
 
   .tabs {
+    background-color: transparent;
     display: flex;
     justify-content: space-around;
-    padding: 2rem;
+    margin-bottom: 0;
+    border: none;
+
+    & > * {
+      text-align: center;
+      background-color: #f0f0f0;
+      padding: 0.5rem;
+      width: 50%;
+      border-radius: 15px 15px 0 0;
+
+      &.active {
+        background-color: #fff;
+      }
+    }
+
+    & .btn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+
+      &.active {
+        border: 1px solid #3ab3973a;
+        border-bottom: none;
+        font-weight: bold;
+      }
+    }
   }
 
-  .TabContent {
+  .desc-att {
+    text-align: start;
+    display: flex;
+    letter-spacing: 1.5px;
+    padding: 1.2rem;
+    background-color: #fff;
     height: 40%;
+    margin-top: 0;
+    border-top: none;
   }
 }

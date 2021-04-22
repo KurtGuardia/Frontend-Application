@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   ProductImage,
   ProductMainInfo,
@@ -9,10 +9,13 @@ import {
 } from './components';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProduct } from '../../actions/productActions';
+import './Product.scss';
 import Spinner from '../UI/Spinner/Spinner';
 
 const Product = () => {
   const dispatch = useDispatch();
+  const [description, setDescription] = useState(true);
+  const [attributes, setAttributes] = useState(false);
 
   const product = useSelector((state) => state.product);
   const { loading, product: prod, error } = product;
@@ -39,13 +42,31 @@ const Product = () => {
       ) : (
         <>
           {' '}
-          <div className='product'>
+          <div className='Product'>
             <ProductImage product={prod} />
             <ProductMainInfo product={prod} />
             <div className='tabs'>
-              <Description product={prod} />
-              <Attributes product={prod} />
-            </div>
+              <button
+                className={description ? 'btn active' : 'btn'}
+                onClick={() => {
+                  setDescription(true);
+                  setAttributes(false);
+                }}
+              >
+                Description
+              </button>
+              <button
+                className={attributes ? 'btn active' : 'btn'}
+                onClick={() => {
+                  setDescription(false);
+                  setAttributes(true);
+                }}
+              >
+                Attributes
+              </button>
+            </div>{' '}
+            {description && <Description product={prod} />}
+            {attributes && <Attributes product={prod} />}
           </div>
           <div className='user'>
             <UserInfo product={prod} />
