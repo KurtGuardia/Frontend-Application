@@ -1,6 +1,7 @@
 import './App.scss';
 import { Header, Navigation, Product, MainPage } from './components';
 import { Switch, Route } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 function App() {
   return (
