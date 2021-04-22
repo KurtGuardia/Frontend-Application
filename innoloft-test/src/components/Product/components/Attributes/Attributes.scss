@@ -1,7 +1,18 @@
 .attributes {
   display: flex;
   justify-content: space-around;
-  font-size: 12px;
+  font-size: 14px;
+
+  & .blur {
+    background-color: rgba($color: #fff, $alpha: 0.7);
+    backdrop-filter: blur(8px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 110vh;
+    width: 90vw;
+    z-index: 2;
+  }
 
   & i {
     color: #3ab396;
@@ -39,21 +50,29 @@
     & button {
       position: absolute;
       right: 0;
-      &:first-of-type {
-        top: 0;
-      }
-      &:last-of-type {
-        bottom: 0;
-      }
+      top: 0;
     }
   }
 
   & select,
   & input {
+    visibility: hidden;
     margin-top: 0.5rem;
     border: 1px solid #3ab396;
     border-radius: 15px;
     outline: none;
     background-color: #fff;
+
+    &.isEdit {
+      visibility: visible;
+    }
+  }
+
+  & select {
+    width: 25%;
+  }
+
+  & input {
+    padding: 0.3rem;
   }
 }

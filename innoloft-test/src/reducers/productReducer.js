@@ -5,6 +5,8 @@ import {
   PRODUCT_UPDATE_FAIL,
   PRODUCT_UPDATE_REQUEST,
   PRODUCT_UPDATE_SUCCESS,
+  FETCH_TRL_FAIL,
+  FETCH_TRL_SUCCESS,
 } from '../constants/productConstants';
 
 export const getProductReducer = (state = {}, action) => {
@@ -21,6 +23,21 @@ export const getProductReducer = (state = {}, action) => {
     case PRODUCT_FAIL:
       return {
         loading: false,
+        error: action.payload,
+      };
+    default:
+      return state;
+  }
+};
+
+export const getTrlReducer = (state = [], action) => {
+  switch (action.type) {
+    case FETCH_TRL_SUCCESS:
+      return {
+        trl: action.payload,
+      };
+    case FETCH_TRL_FAIL:
+      return {
         error: action.payload,
       };
     default:
