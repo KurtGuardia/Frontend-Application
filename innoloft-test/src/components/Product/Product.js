@@ -9,6 +9,7 @@ import {
 } from './components';
 import { useSelector, useDispatch } from 'react-redux';
 import { getProduct } from '../../actions/productActions';
+import Spinner from '../UI/Spinner/Spinner';
 
 const Product = () => {
   const dispatch = useDispatch();
@@ -22,18 +23,25 @@ const Product = () => {
 
   return (
     <div className='main'>
-      <div className='product'>
-        <ProductImage product={prod} />
-        <ProductMainInfo product={prod} />
-        <div className='tabs'>
-          <Description product={prod} />
-          <Attributes product={prod} />
-        </div>
-      </div>
-      <div className='user'>
-        <UserInfo product={prod} />
-        <Map product={prod} />
-      </div>
+      {prod === undefined ? (
+        <Spinner />
+      ) : (
+        <>
+          {' '}
+          <div className='product'>
+            <ProductImage product={prod} />
+            <ProductMainInfo product={prod} />
+            <div className='tabs'>
+              <Description product={prod} />
+              <Attributes product={prod} />
+            </div>
+          </div>
+          <div className='user'>
+            <UserInfo product={prod} />
+            <Map product={prod} />
+          </div>
+        </>
+      )}
     </div>
   );
 };
